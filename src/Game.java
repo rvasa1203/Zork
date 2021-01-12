@@ -233,11 +233,11 @@ class Game {
 			if (inventory.addItem(item)) {
 				System.out.println("You have taken the " + itemName);
 				// following code allows you to do something with an item in the same room
-				if (currentRoom.getRoomName().equals("Hallway") &&  itemName.equals("ball")) {
-					currentRoom = masterRoomMap.get("ATTIC");
-					System.out.println("You seem to be lying on the floor all confused. It seems you have been here for a while.\n");
-					System.out.println(currentRoom.longDescription());
-				}
+				// if (currentRoom.getRoomName().equals("Hallway") &&  itemName.equals("ball")) {
+				// 	currentRoom = masterRoomMap.get("ATTIC");
+				// 	System.out.println("You seem to be lying on the floor all confused. It seems you have been here for a while.\n");
+				// 	System.out.println(currentRoom.longDescription());
+				
 			}else {
 				System.out.println("You were unable to take the " + itemName);
 			}

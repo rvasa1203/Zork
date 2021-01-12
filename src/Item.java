@@ -3,7 +3,7 @@ public class Item {
 	private String description;
 	private Inventory items;
     private boolean isOpenable;
-    private int weight;
+    // private int weight;
 	
 	
 	public Item() {

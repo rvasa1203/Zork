@@ -1,15 +1,15 @@
-Item Name: bag
-Item Description: A brown paper bag
-Openable: true
-Room: ATTIC
-Item Name: knife
-Item Description: A sharp knife
+Item Name: Tablet
+Item Description: A surface tablet
+Openable: falsse
+Room: Lockdown
+Item Name: Cable
+Item Description: A wifi cable
 Openable: false
-Room: HALLWAY
-Item Name: lantern
-Item Description: A rusty lantern
+Room: Zoom 
+Item Name: Money 
+Item Description: A bag of money to pay for the vaccine
 Openable: false
-Room: HALLWAY
+Room: Bank
 Item Name: pickle
 Item Description: A sour pickle
 Openable: false

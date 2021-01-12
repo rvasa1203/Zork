@@ -23,7 +23,7 @@ Room Name: Zoom
 Room Description: During your zoom call your younger sibling unplugs the wifi, grab the cable and move on to the next room to fix the router.  
 Exit Rooms: N-Router
 Room Name: Router
-Room Description: Drop the plug and your router will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
+Room Description: Plug the router in and your wifi will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
 Exit Rooms: W-Florida, E-Italy
 Room Name: Florida
 Room Description: You are now in Florida for a short vacation, you are now 20 years older, be wary of where you go, covid is everywhere.   
@@ -60,4 +60,4 @@ Room Description: You are at the headquarters of Johnson & Johnson and take thei
 Exit Rooms: E-Crossroad
 Room Name: New York New York
 Room Description: You have made it to the headquarters of Pfizer! Drop the money and take the vaccine. You have survived the Covid-19 Pandemic!!
-Exit Rooms:
+Exit Rooms: W-Crossroad
