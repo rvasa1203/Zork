@@ -148,7 +148,9 @@ class Game {
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-			finished = processCommand(command);
+		  if(!processCommand(command) || hasWon()){
+        finished = true;
+      }
 		}
 		System.out.println("Thank you for playing.  Good bye.");
 	}
@@ -209,11 +211,26 @@ class Game {
 				System.out.println("Open what?");
 			else
 				openItem(command.getSecondWord());
+		} else if (commandWord.equals("access")) {
+			if (!command.hasSecondWord())
+				System.out.println("access what?");
+			else
+				accessItem(command.getSecondWord());
 		}
 		return false;
 	}
 
-	private void openItem(String itemName) {
+	private void accessItem(String itemName) {
+    Item item = inventory.contains(itemName);
+
+    if(item != null){
+      System.out.println("You have access the " + itemName);
+    } else {
+      System.out.println("What is it you think you can access but you cannot?");
+    }
+    }
+
+    private void openItem(String itemName) {
 		Item item = inventory.contains(itemName);
 		
 		if(item != null) {
@@ -329,6 +346,13 @@ class Game {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
 		}
-	}
+  }
+  
+  private boolean hasWon(){
+    if(inventory.hasItem("Pfizer vaccine")){
+      return true;
+    }
+    return false;
+  }
 
 }
