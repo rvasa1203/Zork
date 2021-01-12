@@ -33,4 +33,14 @@ public class Inventory {
         return msg;
     }
 
+	public Item contains(String itemName) {
+		for(Item i : items){
+            if(i.getName().equals(itemName)){
+                return i;
+            }
+        }
+
+        return null;
+	}
+
 }
