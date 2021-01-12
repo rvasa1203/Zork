@@ -10,7 +10,7 @@ Item Name: Money
 Item Description: A bag of money to pay for the vaccine
 Openable: false
 Room: Bank
-Item Name: pickle
-Item Description: A sour pickle
+Item Name: Pfizer vaccine 
+Item Description: The Pfizer covid vaccine
 Openable: false
-Item: BAG
+Room: New York New York
