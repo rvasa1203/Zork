@@ -148,9 +148,9 @@ class Game {
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-		  if(!processCommand(command) || hasWon()){
-        finished = true;
-      }
+		  	if(processCommand(command)){
+        		finished = true;
+      		}
 		}
 		System.out.println("Thank you for playing.  Good bye.");
 	}
@@ -180,7 +180,7 @@ class Game {
 		if (commandWord.equals("help"))
 			printHelp();
 		else if (commandWord.equals("go"))
-			goRoom(command);
+			return goRoom(command);
 		else if (commandWord.equals("quit")) {
 			if (command.hasSecondWord())
 				System.out.println("Quit what?");
@@ -193,7 +193,7 @@ class Game {
 		} else if (commandWord.equals("sit")) {
 			sit();
 		} else if ("udeswn".indexOf(commandWord) > -1) {
-			goRoom(command);
+			return goRoom(command);
 		} else if (commandWord.equals("take")) {
 			if (!command.hasSecondWord())
 				System.out.println("Take what?");
@@ -314,11 +314,11 @@ class Game {
 	 * Try to go to one direction. If there is an exit, enter the new room,
 	 * otherwise print an error message.
 	 */
-	private void goRoom(Command command) {
+	private boolean goRoom(Command command) {
 		if (!command.hasSecondWord() && ("udeswn".indexOf(command.getCommandWord()) < 0)) {
 			// if there is no second word, we don't know where to go...
 			System.out.println("Go where?");
-			return;
+			return false;
 		}
 		
 		String direction = command.getSecondWord();
@@ -345,14 +345,16 @@ class Game {
 		else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
+			if(currentRoom.getRoomName().equals("Math Class")){
+				System.out.println("What is 8!");
+				Scanner in = new Scanner(System.in);
+				while(!in.nextLine().equalsIgnoreCase("40320")){
+					System.out.println("Wrong, what is your favourite colour?");
+				}
+			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine")){
+				return true;
+			}
 		}
+		return false;
   }
-  
-  private boolean hasWon(){
-    if(inventory.hasItem("Pfizer vaccine")){
-      return true;
-    }
-    return false;
-  }
-
 }

@@ -43,4 +43,14 @@ public class Inventory {
         return null;
 	}
 
+	public boolean hasItem(String itemName) {
+		for(Item i : items){
+            if(i.getName().equals(itemName)){
+                return true;
+            }
+        }
+
+        return false;
+	}
+
 }

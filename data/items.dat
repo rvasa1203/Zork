@@ -1,20 +1,20 @@
 Item Name: Tablet
 Item Description: A surface tablet
-Openable: falsse
-Room: Lockdown
+Openable: false
+Room: LOCKDOWN
 Item Name: Cable
 Item Description: A wifi cable
 Openable: false
-Room: Zoom 
+Room: ZOOM
 Item Name: Money 
 Item Description: A bag of money to pay for the vaccine
 Openable: false
-Room: Bank
+Room: BANK
 Item Name: Pfizer vaccine 
 Item Description: The Pfizer covid vaccine
 Openable: false
-Room: New York New York
+Room: NEW_YORK_NEW_YORK
 Item Name: Router
 Item Description: The wifi router
 Openable: true
-Room: Router
+Room: ROUTER
