@@ -349,10 +349,24 @@ class Game {
 				System.out.println("What is 8!");
 				Scanner in = new Scanner(System.in);
 				while(!in.nextLine().equalsIgnoreCase("40320")){
-					System.out.println("Wrong, what is your favourite colour?");
+					System.out.println("Wrong, what is 8!?");
 				}
-			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine")){
+			} else if(currentRoom.getRoomName().equals("Science Class")){
+				System.out.println("What is the element symbol for iron?");
+				Scanner temp = new Scanner(System.in);
+				while(!temp.nextLine().equalsIgnoreCase("Fe")){
+					System.out.println("Wrong, what is the element symbol for iron?");
+				}
+			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && inventory.hasItem("Money")){
 				return true;
+			} else if(currentRoom.getRoomName().equals("Comp Sci")){
+				System.out.println("Fill in the blank: System.out.______();");
+				Scanner temp1 = new Scanner(System.in);
+				while(!temp1.nextLine().equalsIgnoreCase("println")){
+					System.out.println("Wrong, Fill in the blank: System.out.______();");
+				}
+			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && !inventory.hasItem("Money")){
+				System.out.println("You do not have the money to pay for the vaccine, quit the game and restart!")
 			}
 		}
 		return false;
