@@ -15,7 +15,7 @@ public class Inventory {
 
     public Item removeItem(String name) { // returns item based on name given, if item is not in the inventory, it returns null
         for(int i=0; i<items.size(); i++){
-            if(name.equals(items.get(i).getName())) {
+            if(name.equalsIgnoreCase(items.get(i).getName())) {
                 return items.remove(i);
             }
         }

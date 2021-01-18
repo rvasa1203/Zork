@@ -1,5 +1,5 @@
 Room Name: March 2020
-Room Description: You are currently a 18 year old in March 2020 and about to go on a journey that takes you through the year of 2020. Your goal is to find the Pfizer vaccine to save yourself. You have to find the stash of money to pay for the vacine. Along the way you might get the virus, if you are 50 or older at that point you will die. Some rooms might increase your age. If you enter an area with 10,000 or more cases you get the virus. If you contract the virus you become 10 years older.
+Room Description: You are currently a 18 year old in March 2020 and about to go on a journey that takes you through the year of 2020. Your goal is to find the Pfizer vaccine to save yourself. You have to find the stash of money to pay for the vaccine. Along the way you might get the virus, if you are 50 or older at that point you will die. Some rooms might increase your age. If you enter an area with 10,000 or more cases you get the virus. If you contract the virus you become 10 years older.
 Exit Rooms: E-Night Club, N-Lockdown
 Room Name: Night Club
 Room Description: You are at a night club where you have caught the virus, proceed to quarantine for 14 days.
@@ -12,10 +12,10 @@ Room Description: You are now in a 14 day self isolation period, please proceed 
 Exit Rooms: W-Lockdown
 Room Name: Math Class
 Room Description: You are now in Math Class, answer the following question to continue 
-Exit Rooms: N-Zoom
+Exit Rooms: N-Zoom, S-Lockdown
 Room Name: Science Class
 Room Description: You are now in Science Class, answer the following question to continue   
-Exit Rooms: N-Comp Sci
+Exit Rooms: N-Comp Sci, E-Lockdown
 Room Name: Comp Sci
 Room Description: You are now in Computer Science Class, answer the following question to continue  
 Exit Rooms: E-Math Class
@@ -23,7 +23,7 @@ Room Name: Zoom
 Room Description: During your zoom call your younger sibling unplugs the wifi, grab the cable and move on to the next room to fix the router.  
 Exit Rooms: N-Router
 Room Name: Router
-Room Description: Plug the router in and your wifi will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
+Room Description: Drop the cable and your wifi will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
 Exit Rooms: W-Florida, E-Italy
 Room Name: Florida
 Room Description: You are now in Florida for a short vacation, you are now 20 years older, be wary of where you go, covid is everywhere.   
