@@ -23,7 +23,9 @@ class Game {
 	private Parser parser;
 	private Room currentRoom;
 	private Inventory inventory;
-	private int age = 18; 
+	private int age; 
+	private boolean hasCovid;
+	private static Scanner temp = new Scanner(System.in);
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -123,6 +125,8 @@ class Game {
 	 */
 	public Game() {
 		try {
+			age = 18;
+			hasCovid = false;
 			initRooms("data/Rooms.dat");	// creates the map from the rooms.dat file
 			// initRooms is responsible for building/ initializing the masterRoomMap (private instance variable)
 			currentRoom = masterRoomMap.get("MARCH_2020");	// the key for the masterRoomMap is the name of the room all in Upper Case (spaces replaced with _)
@@ -151,7 +155,10 @@ class Game {
 			Command command = parser.getCommand();
 		  	if(processCommand(command)){
         		finished = true;
-      		}
+			  }
+			  if(hasCovid && age >= 50){
+				  finished = true;
+			  }
 		}
 		System.out.println("Thank you for playing.  Good bye.");
 	}
@@ -212,23 +219,24 @@ class Game {
 				System.out.println("Open what?");
 			else
 				openItem(command.getSecondWord());
-		} else if (commandWord.equals("access")) {
+		} else if (commandWord.equals("insert")) {
 			if (!command.hasSecondWord())
-				System.out.println("access what?");
+				System.out.println("insert what?");
 			else
-				accessItem(command.getSecondWord());
+				useItem(command.getSecondWord());
 		}
 		return false;
 	}
 
-	private void accessItem(String itemName) {
-    Item item = inventory.contains(itemName);
+	private void useItem(String itemName){
+		Item item = inventory.contains(itemName);
+		
+		if (item != null && itemName.equalsIgnoreCase("cable")&&currentRoom.getRoomName().equals("router")){
+			inventory.removeItem(itemName);
+			System.out.println("You have placed the cable in the router.");
+		}
 
-    if(item != null){
-      System.out.println("You have access the " + itemName);
-    } else {
-      System.out.println("What is it you think you can access but you cannot?");
-    }
+    	
     }
 
     private void openItem(String itemName) {
@@ -278,6 +286,9 @@ class Game {
 		}
 	}
 
+	
+
+		
 	private void eat(String secondWord) {
 		if (secondWord.equals("steak"))
 			System.out.println("YUMMY");
@@ -356,9 +367,11 @@ class Game {
 				}
 			} else if(currentRoom.getRoomName().equals("Science Class") && !inventory.hasItem("Tablet")){
 				System.out.println("You do not have the tablet go back to lockdown and take the tablet.");
+			} else if(currentRoom.getRoomName().equals("New York New York") && !inventory.hasItem("Money")){
+				System.out.println("You do not have the Money to pay for the vaccine go back and get the money.");
 			} else if(currentRoom.getRoomName().equals("Science Class")){
 				System.out.println("What is the element symbol for iron?");
-				Scanner temp = new Scanner(System.in);
+				
 				while(!temp.nextLine().equalsIgnoreCase("Fe")){
 					System.out.println("Wrong, what is the element symbol for iron?");
 				}
@@ -366,11 +379,10 @@ class Game {
 				return true;
 			} else if(currentRoom.getRoomName().equals("Comp Sci")){
 				System.out.println("Fill in the blank: System.out.______();");
-				Scanner temp1 = new Scanner(System.in);
-				while(!temp1.nextLine().equalsIgnoreCase("println")){
+				
+				while(!temp.nextLine().equalsIgnoreCase("println")){
 					System.out.println("Wrong, Fill in the blank: System.out.______();");
 				}
-				temp1.close();
 			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && !inventory.hasItem("Money")){
 				System.out.println("You do not have the money to pay for the vaccine, quit the game and restart!");
 			} else if(currentRoom.getRoomName().equals("Italy")){
@@ -380,10 +392,12 @@ class Game {
 				age += 15;
 				System.out.println("Age: " + age);
 				System.out.println("You have caught the virus and your is age is increased by 15 years");
+				hasCovid = true;
 			} else if(currentRoom.getRoomName().equals("Beach")){
 				age += 15;
 				System.out.println(" Your Age: " + age);
 				System.out.println("You have caught the virus and your is age is increased by 15 years");
+				hasCovid = true; 
 			}
 		}
 		return false;
