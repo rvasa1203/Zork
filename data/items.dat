@@ -14,7 +14,4 @@ Item Name: Pfizer vaccine
 Item Description: The Pfizer covid vaccine
 Openable: false
 Room: NEW_YORK_NEW_YORK
-Item Name: Router
-Item Description: The wifi router
-Openable: true
-Room: ROUTER
+

@@ -219,9 +219,9 @@ class Game {
 				System.out.println("Open what?");
 			else
 				openItem(command.getSecondWord());
-		} else if (commandWord.equals("insert")) {
+		} else if (commandWord.equals("use")) {
 			if (!command.hasSecondWord())
-				System.out.println("insert what?");
+				System.out.println("use what?");
 			else
 				useItem(command.getSecondWord());
 		}
@@ -231,7 +231,7 @@ class Game {
 	private void useItem(String itemName){
 		Item item = inventory.contains(itemName);
 		
-		if (item != null && itemName.equalsIgnoreCase("cable")&&currentRoom.getRoomName().equals("router")){
+		if (item != null && itemName.equalsIgnoreCase("Cable")&&currentRoom.getRoomName().equals("Router")){
 			inventory.removeItem(itemName);
 			System.out.println("You have placed the cable in the router.");
 		}
@@ -369,6 +369,8 @@ class Game {
 				System.out.println("You do not have the tablet go back to lockdown and take the tablet.");
 			} else if(currentRoom.getRoomName().equals("New York New York") && !inventory.hasItem("Money")){
 				System.out.println("You do not have the Money to pay for the vaccine go back and get the money.");
+			} else if(currentRoom.getRoomName().equals("Florida") && inventory.hasItem("Cable")){
+				System.out.println("You did not fix the wifi, return to the router and use the Cable.");
 			} else if(currentRoom.getRoomName().equals("Science Class")){
 				System.out.println("What is the element symbol for iron?");
 				
@@ -398,6 +400,17 @@ class Game {
 				System.out.println(" Your Age: " + age);
 				System.out.println("You have caught the virus and your is age is increased by 15 years");
 				hasCovid = true; 
+			} else if(currentRoom.getRoomName().equals("New Brunswick New Jersey")){
+				System.out.println("The untested Johnson and Johnson vaccine kills you!");
+				return true; 
+			} else if(currentRoom.getRoomName().equals("Gaithersburg Maryland")){
+				System.out.println("You are at Novavax headquarters, you take their untested vaccine and die.");
+				return true; 
+			} else if(currentRoom.getRoomName().equals("India")){
+				return true; 
+			} else if(currentRoom.getRoomName().equals("Funeral")){
+				age += 10;
+				System.out.println(" Your Age: " + age);
 			}
 		}
 		return false;
