@@ -23,11 +23,11 @@ Room Name: Zoom
 Room Description: During your zoom call your younger sibling unplugs the wifi, grab the cable and move on to the next room to fix the router.  
 Exit Rooms: N-Router
 Room Name: Router
-Room Description: Drop the cable and your wifi will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
+Room Description: Use the cable and your wifi will now be fixed. Now you are out of the first lockdown and entering the summer of 2020  
 Exit Rooms: W-Florida, E-Italy
 Room Name: Florida
-Room Description: You are now in Florida for a short vacation, you are now 20 years older, be wary of where you go, covid is everywhere.   
-Exit Rooms: N-Beach
+Room Description: You are now in Florida for a short vacation, be wary of where you go, covid is everywhere.   
+Exit Rooms: N-Beach, E-Router
 Room Name: Italy
 Room Description: You have now travelled to Italy, the current amount of cases in your area is 35,000. You catch the virus multiple times and Die! 
 Exit Rooms: W-Router
@@ -51,7 +51,7 @@ Room Description: You are in India on a service trip, there are 65,000 cases in 
 Exit Rooms: W-Bank
 Room Name: Crossroad
 Room Description: You now have to make the most important decision of your life. One of the exists is the address to the Pfizer headquarters, choose the right one to survive. 
-Exit Rooms: N-Gaithersburg Maryland, W-New Brunswick New Jersey, E-New York New York 
+Exit Rooms: N-Gaithersburg Maryland, W-New Brunswick New Jersey, E-New York New York
 Room Name: Gaithersburg Maryland 
 Room Description: You are at Novavax headquarters, you take their untested vaccine and die. 
 Exit Rooms: S-Crossroad

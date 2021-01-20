@@ -129,7 +129,7 @@ class Game {
 			hasCovid = false;
 			initRooms("data/Rooms.dat");	// creates the map from the rooms.dat file
 			// initRooms is responsible for building/ initializing the masterRoomMap (private instance variable)
-			currentRoom = masterRoomMap.get("MARCH_2020");	// the key for the masterRoomMap is the name of the room all in Upper Case (spaces replaced with _)
+			currentRoom = masterRoomMap.get("CROSSROAD");	// the key for the masterRoomMap is the name of the room all in Upper Case (spaces replaced with _)
 			inventory = new Inventory();
 			initItems("data/items.dat");
 			
@@ -160,7 +160,7 @@ class Game {
 				  finished = true;
 			  }
 		}
-		System.out.println("Thank you for playing.  Good bye.");
+		System.out.println("You died! Thank you for playing.  Good bye.");
 	}
 
 	/**
@@ -378,7 +378,8 @@ class Game {
 					System.out.println("Wrong, what is the element symbol for iron?");
 				}
 			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && inventory.hasItem("Money")){
-				return true;
+				System.out.println("You win, you have survived the Covid 19 pandemic!");
+				System.out.println("Quit the game.");
 			} else if(currentRoom.getRoomName().equals("Comp Sci")){
 				System.out.println("Fill in the blank: System.out.______();");
 				
@@ -406,7 +407,9 @@ class Game {
 			} else if(currentRoom.getRoomName().equals("Gaithersburg Maryland")){
 				System.out.println("You are at Novavax headquarters, you take their untested vaccine and die.");
 				return true; 
-			} else if(currentRoom.getRoomName().equals("India")){
+			}  else if(currentRoom.getRoomName().equals("India")){
+				return true; 
+			} else if(currentRoom.getRoomName().equals("Bar")){
 				return true; 
 			} else if(currentRoom.getRoomName().equals("Funeral")){
 				age += 10;
