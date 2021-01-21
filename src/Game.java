@@ -129,7 +129,7 @@ class Game {
 			hasCovid = false;
 			initRooms("data/Rooms.dat");	// creates the map from the rooms.dat file
 			// initRooms is responsible for building/ initializing the masterRoomMap (private instance variable)
-			currentRoom = masterRoomMap.get("CROSSROAD");	// the key for the masterRoomMap is the name of the room all in Upper Case (spaces replaced with _)
+			currentRoom = masterRoomMap.get("MARCH_2020");	// the key for the masterRoomMap is the name of the room all in Upper Case (spaces replaced with _)
 			inventory = new Inventory();
 			initItems("data/items.dat");
 			
@@ -377,7 +377,7 @@ class Game {
 				while(!temp.nextLine().equalsIgnoreCase("Fe")){
 					System.out.println("Wrong, what is the element symbol for iron?");
 				}
-			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && inventory.hasItem("Money")){
+			} else if(inventory.hasItem("Vaccine") && inventory.hasItem("Money")){
 				System.out.println("You win, you have survived the Covid 19 pandemic!");
 				System.out.println("Quit the game.");
 			} else if(currentRoom.getRoomName().equals("Comp Sci")){
@@ -386,7 +386,7 @@ class Game {
 				while(!temp.nextLine().equalsIgnoreCase("println")){
 					System.out.println("Wrong, Fill in the blank: System.out.______();");
 				}
-			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Pfizer vaccine") && !inventory.hasItem("Money")){
+			} else if(currentRoom.getRoomName().equals("New York New York") && inventory.hasItem("Vaccine") && !inventory.hasItem("Money")){
 				System.out.println("You do not have the money to pay for the vaccine, quit the game and restart!");
 			} else if(currentRoom.getRoomName().equals("Italy")){
 				System.out.println("You have now travelled to Italy, the current amount of cases in your area is 35,000. You catch the virus multiple times and Die! ");

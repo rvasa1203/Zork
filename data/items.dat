@@ -10,7 +10,7 @@ Item Name: Money
 Item Description: A bag of money to pay for the vaccine
 Openable: false
 Room: BANK
-Item Name: Pfizer vaccine 
+Item Name: Vaccine 
 Item Description: The Pfizer covid vaccine
 Openable: false
 Room: NEW_YORK_NEW_YORK
